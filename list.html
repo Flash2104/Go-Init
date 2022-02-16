@@ -10,12 +10,12 @@
       </tr>
     </thead>
     <tbody>
-      {{ range index a := . }} {{ if a.WillAttend }}
+      {{ range $index, $a := . }} {{ if $a.WillAttend }}
       <tr>
-        <td>{{ index }}</td>
-        <td>{{ a.Name }}</td>
-        <td>{{ a.Email }}</td>
-        <td>{{ a.Phone }}</td>
+        <td>{{ $index }}</td>
+        <td>{{ $a.Name }}</td>
+        <td>{{ $a.Email }}</td>
+        <td>{{ $a.Phone }}</td>
       </tr>
       {{ end }} {{ end }}
     </tbody>

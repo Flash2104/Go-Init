@@ -11,21 +11,21 @@
 <form method="POST" class="m-2">
   <div class="form-group my-1">
     <label>Your name:</label>
-    <input name="name" class="form-control" value="{{if .Name}} {{else}}Kirill{{end}}" />
+    <input name="name" class="form-control" value="{{if .Name}}{{.Name}}{{else}}Kirill{{end}}" />
   </div>
   <div class="form-group my-1">
     <label>Your email:</label>
-    <input name="email" class="form-control" value="{{if .Email}} {{else}}kirill@test.com{{end}}" />
+    <input name="email" class="form-control" value="{{if .Email}}{{.Email}}{{else}}kirill@test.com{{end}}" />
   </div>
   <div class="form-group my-1">
     <label>Your phone number:</label>
-    <input name="phone" class="form-control" value="{{if .Phone}} {{else}}+79266762453{{end}}" />
+    <input name="phone" class="form-control" value="{{if .Phone}}{{.Phone}}{{else}}+79266762453{{end}}" />
   </div>
   <div class="form-group my-1">
     <label>Will you attend?</label>
     <select name="willattend" class="form-select">
-      <option selected="true" value="true" {{if .WillAttend}}selected{{end}}>Yes, I'll be there</option>
-      <option value="false" {{if not .WillAttend}}{{end}}>No, I can't come</option>
+      <option value="true" {{if or (.WillAttend) (eq .WillAttend  nil)}}selected{{end}}>Yes, I'll be there</option>
+      <option value="false" {{if not .WillAttend}}selected{{end}}>No, I can't come</option>
     </select>
   </div>
   <button class="btn btn-primary mt-3" type="submit">Submit RSVP</button>
