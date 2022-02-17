@@ -101,4 +101,47 @@ func main() {
 	fmt.Println("Bool 1", bool1, b1err)
 	fmt.Println("Bool 2", bool2, b2err)
 	fmt.Println("Bool 3", bool3, b3err)
+
+	val4 := "02"
+	if bool1, b1err := strconv.ParseBool(val4); b1err == nil {
+		fmt.Println("Parsed value:", bool1)
+	} else {
+		fmt.Println("Cannot parse", val4)
+	}
+
+	fmt.Println("=============")
+	fmt.Println("Formatting Values as Strings")
+	// 	FormatBool(val) This function returns the string true or false based on the value of the
+	// specified bool.
+	// FormatInt(val, base) This function returns a string representation of the specified int64 value,
+	// expressed in the specified base.
+	// FormatUint(val, base) This function returns a string representation of the specified uint64 value,
+	// expressed in the specified base.
+	// FormatFloat(val, format,
+	// precision, size)
+	// This function returns a string representation of the specified float64 value,
+	// expressed using the specified format, precision, and size.
+	// Itoa(val) This function returns a string representation of the specified int value,
+	// expressed using base 10.
+
+	val5 := true
+	val6 := false
+	str1 := strconv.FormatBool(val5)
+	str2 := strconv.FormatBool(val6)
+	fmt.Println("Formatted value 1: " + str1)
+	fmt.Println("Formatted value 2: " + str2)
+
+	val7 := 23.55
+	Fstring := strconv.FormatFloat(val7, 'f', 2, 64)
+	Estring := strconv.FormatFloat(val7, 'e', -1, 64)
+	fmt.Println("Format F: " + Fstring)
+	fmt.Println("Format E: " + Estring)
+
+	// 	f The floating-point value will be expressed in the form ±ddd.ddd without an exponent, such as
+	// 49.95.
+	// e, E The floating-point value will be expressed in the form ±ddd.ddde±dd, such as 4.995e+01 or
+	// 4.995E+01. The case of the letter denoting the exponent is determined by the case of the rune
+	// used as the formatting argument.
+	// g, G The floating-point value will be expressed using format e/E for large exponents or format f for
+	// smaller values.
 }
