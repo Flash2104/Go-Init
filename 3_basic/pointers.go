@@ -27,10 +27,10 @@ func main() {
 
 	names := []string{"Alice", "Charlie", "Bob"}
 	// secondName := &names[1]
-	charlieIndex := pointerOfElement("Charlie", names)
-	fmt.Println(*charlieIndex)
+	charliePointer := pointerOfElement("Charlie", names)
+	fmt.Println(*charliePointer)
 	sort.Strings(names[:])
-	fmt.Println(*charlieIndex)
+	fmt.Println(*charliePointer)
 }
 
 func pointerOfElement(element string, data []string) *string {
