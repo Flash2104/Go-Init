@@ -37,4 +37,8 @@ func main() {
 	fmt.Println("names:", namesSlice)
 	fmt.Println("appendedNames:", appendedNames)
 
+	moreNames := []string { "Hat Gloves"}
+appendedNames := append(names, moreNames...)
+fmt.Println("appendedNames:", appendedNames)
+
 }
