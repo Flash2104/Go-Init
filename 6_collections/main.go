@@ -37,8 +37,15 @@ func main() {
 	fmt.Println("names:", namesSlice)
 	fmt.Println("appendedNames:", appendedNames)
 
-	moreNames := []string { "Hat Gloves"}
-appendedNames := append(names, moreNames...)
-fmt.Println("appendedNames:", appendedNames)
+	moreNames := []string{"Hat Gloves"}
+	appendedNames = append(namesSlice, moreNames...)
+	fmt.Println("appendedNames:", appendedNames)
 
+	products := [4]string{"Kayak", "Lifejacket", "Paddle", "Hat"}
+	allNames := products[1:]
+	someNames := allNames[0:3]
+	allNames = append(allNames, "Gloves")
+	allNames[1] = "Canoe"
+	fmt.Println("someNames:", someNames)
+	fmt.Println("allNames", allNames)
 }
