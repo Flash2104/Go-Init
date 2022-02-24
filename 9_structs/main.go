@@ -145,7 +145,7 @@ func main() {
 	fmt.Println("Understanding Zero Value for Structs and Pointers to Structs")
 	var prod1 Product
 	var prodPtr *Product
-	fmt.Println("Value:", prod1.name, prod1.category, prod1.price, prod1.Supplier.name)
+	fmt.Println("Value:", prod1.name, prod1.category, prod1.price) //prod1.Supplier.name)
 	fmt.Println("Pointer:", prodPtr)
 }
 
