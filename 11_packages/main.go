@@ -6,6 +6,7 @@ import (
 	currencyFmt "packages/fmt"
 	"packages/store"
 	"packages/store/cart"
+	// "github.com/fatih/color"
 )
 
 func main() {
@@ -18,6 +19,8 @@ func main() {
 		CustomerName: "Alice",
 		Products:     []store.Product{*product},
 	}
+	// color.Green("Name: " + cart.CustomerName)
+	// color.Cyan("Total: " + currencyFmt.ToCurrency(cart.GetTotal()))
 	fmt.Println("Name: ", cart.CustomerName)
 	fmt.Println("Total: ", currencyFmt.ToCurrency(cart.GetTotal()))
 }
