@@ -30,6 +30,7 @@ func DispatchOrders(channel chan<- DispatchNotification) {
 		// 	notification := <-channel
 		// 	fmt.Println("Read:", notification.Customer)
 		// }
+		time.Sleep(time.Millisecond * 750)
 	}
 
 	close(channel)
